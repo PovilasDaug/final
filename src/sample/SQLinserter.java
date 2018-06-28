@@ -5,6 +5,9 @@ import java.sql.*;
 public class SQLinserter
 {
 
+
+    private Connection conn = null;
+
     /**
      * Connect to the test.db database
      *
@@ -13,7 +16,7 @@ public class SQLinserter
     private Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:/Users/Admin/Documents/SQLiteStudio/finalDB";
-        Connection conn = null;
+
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -41,6 +44,25 @@ public class SQLinserter
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    private void loadDataFromDB() throws SQLException {
+
+
+        try (Connection conn2 = this.connect();
+
+        PreparedStatement pst = conn2.prepareStatement("Select * from final");
+        ResultSet rs =
+
+        {
+
+
+        }
+
+
+
+
+
     }
 
 

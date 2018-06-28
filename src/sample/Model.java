@@ -4,8 +4,8 @@ package sample;
 
 public class Model {
 
-    String name;
-    String age;
+    private String name;
+    private String age;
 
     public Model(String name, String age) {
         this.name = name;

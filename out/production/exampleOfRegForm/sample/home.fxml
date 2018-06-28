@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="600" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+
+
+<stylesheets>
+    <URL value="@home.fxml" />
+</stylesheets>
+        <children>
+            <TextField fx:id="nameField" layoutX="226.0" layoutY="66.0" />
+            <TextField fx:id="ageField" layoutX="226.0" layoutY="30.0" />
+            <Button layoutX="451.0" layoutY="30.0" mnemonicParsing="false" onAction="#addLine" text="Įrašyti" />
+            <TableView fx:id="view" layoutX="52.0" layoutY="154.0" prefHeight="200.0" prefWidth="506.0">
+                <columns>
+                    <TableColumn fx:id="nameCo" prefWidth="240.0" text="Amžius" />
+                    <TableColumn fx:id="ageCo" prefWidth="265.0" text="Vardas" />
+                </columns>
+            </TableView>
+      <Label layoutX="179.0" layoutY="34.0" text="Vardas:" />
+      <Label layoutX="178.0" layoutY="70.0" text="Amžius:" />
+        </children>
+
+</AnchorPane>

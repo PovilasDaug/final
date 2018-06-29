@@ -8,7 +8,7 @@ public class Model {
 
     private String age;
 
-    private Model(String name, String age) {
+    public Model(String name, String age) {
         this.name = name;
         this.age = age;
     }

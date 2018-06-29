@@ -7,25 +7,31 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="600" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane id="AnchorPane" prefHeight="242.0" prefWidth="600" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
 
 <stylesheets>
     <URL value="@home.fxml" />
 </stylesheets>
         <children>
-            <TextField fx:id="nameField" layoutX="228.0" layoutY="114.0" />
-            <TextField fx:id="ageField" layoutX="228.0" layoutY="78.0" />
-            <Button layoutX="403.0" layoutY="78.0" mnemonicParsing="false" onAction="#addLine" text="Įrašyti" />
-            <TableView fx:id="view" layoutX="52.0" layoutY="154.0" prefHeight="200.0" prefWidth="506.0">
+            <TextField fx:id="nameField" layoutX="76.0" layoutY="114.0" />
+            <TextField fx:id="ageField" layoutX="76.0" layoutY="78.0" />
+            <Button layoutX="127.0" layoutY="162.0" mnemonicParsing="false" onAction="#addLine" text="Įrašyti" />
+            <TableView fx:id="view" layoutX="274.0" layoutY="36.0" prefHeight="151.0" prefWidth="285.0">
                 <columns>
-                    <TableColumn fx:id="nameCo" prefWidth="240.0" text="Amžius" />
-                    <TableColumn fx:id="ageCo" prefWidth="265.0" text="Vardas" />
+                    <TableColumn fx:id="nameCo" prefWidth="90.0" text="Amžius" />
+                    <TableColumn fx:id="ageCo" prefWidth="193.0" text="Vardas" />
                 </columns>
             </TableView>
-      <Label layoutX="181.0" layoutY="82.0" text="Vardas:" />
-      <Label layoutX="180.0" layoutY="118.0" text="Amžius:" />
+      <Label layoutX="29.0" layoutY="82.0" text="Vardas:" />
+      <Label layoutX="28.0" layoutY="118.0" text="Amžius:" />
+      <Label layoutX="28.0" layoutY="26.0" text="Registravimo forma">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
         </children>
 
 </AnchorPane>

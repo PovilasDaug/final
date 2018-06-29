@@ -20,6 +20,8 @@ import javafx.scene.image.ImageView;
 
 public class Controller2 implements Initializable {
 
+
+
     @FXML
     public TableView<Model> view;
     @FXML
@@ -37,6 +39,7 @@ public class Controller2 implements Initializable {
 
         nameCo.setCellValueFactory(new PropertyValueFactory<>("name"));
         ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
+
     }
 
 
@@ -55,10 +58,11 @@ public class Controller2 implements Initializable {
         view.getItems().add(model);
     }
 
-    private void setCellToTable(){
-        nameCo.setCellValueFactory(new PropertyValueFactory<>("name"));
-        ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
+    public void addDataFromDB(){
+
     }
+
+
 
 
 

@@ -1,12 +1,19 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
+import java.util.logging.Logger;
 
 public class SQLinserter
 {
 
 
     private Connection conn = null;
+    private PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    ObservableList<Model> data = FXCollections.observableArrayList();
 
     /**
      * Connect to the test.db database
@@ -27,12 +34,7 @@ public class SQLinserter
         return conn;
     }
 
-    /**
-     * Insert a new row into the warehouses table
-     *
-     * @param name
-     * @param age
-     */
+
     public void insert(String name, String age) {
         String sql = "INSERT INTO final(name,age) VALUES(?,?)";
 
@@ -46,15 +48,22 @@ public class SQLinserter
         }
     }
 
-    private void loadDataFromDB() throws SQLException {
-
-
-        try (Connection conn2 = this.connect();
-
-        PreparedStatement pst = conn2.prepareStatement("Select * from final");
-        ResultSet rs =
-
-        {
+//    private void loadDataFromDB() throws SQLException {
+//
+//
+//        try (Connection conn2 = this.connect();
+//
+//        ResultSet rs = conn2.createStatement().executeQuery("SELECT * FROM filan");
+//
+//        while (rs.next()){
+//            data.add(new Model(rs.getString("name"),rs.getString("age"));
+//
+//        }
+//        catch (SQLException ex){
+//            System.out.println("smthg");
+//        }
+//
+//    }
 
 
         }
@@ -63,9 +72,8 @@ public class SQLinserter
 
 
 
-    }
 
 
-    }
+
 
 

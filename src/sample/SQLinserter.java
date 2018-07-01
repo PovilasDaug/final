@@ -2,9 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.sql.*;
-import java.util.logging.Logger;
 
 public class SQLinserter
 {
@@ -15,13 +13,8 @@ public class SQLinserter
     ResultSet rs = null;
     ObservableList<Model> data = FXCollections.observableArrayList();
 
-    /**
-     * Connect to the test.db database
-     *
-     * @return the Connection object
-     */
     private Connection connect() {
-        // SQLite connection string
+
         String url = "jdbc:sqlite:C:/Users/Admin/Documents/SQLiteStudio/finalDB";
 
         try {
@@ -47,26 +40,7 @@ public class SQLinserter
             System.out.println(e.getMessage());
         }
     }
-
-//    private void loadDataFromDB() throws SQLException {
-//
-//
-//        try (Connection conn2 = this.connect();
-//
-//        ResultSet rs = conn2.createStatement().executeQuery("SELECT * FROM filan");
-//
-//        while (rs.next()){
-//            data.add(new Model(rs.getString("name"),rs.getString("age"));
-//
-//        }
-//        catch (SQLException ex){
-//            System.out.println("smthg");
-//        }
-//
-//    }
-
-
-        }
+}
 
 
 

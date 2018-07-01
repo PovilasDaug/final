@@ -1,11 +1,8 @@
 package sample;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,8 +10,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 
 public class Controller implements Initializable {
@@ -30,7 +25,6 @@ public class Controller implements Initializable {
     @FXML
     public TextField ageField;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -38,10 +32,8 @@ public class Controller implements Initializable {
         ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
     }
 
-
     @FXML
     public void addLine() {
-
 
         SQLinserter in = new SQLinserter();
         in.insert(nameField.getText(), ageField.getText());
@@ -55,9 +47,7 @@ public class Controller implements Initializable {
     }
 
     private ObservableList<Model> data;
-    String url = "jdbc:sqlite:C:/Users/Admin/Documents/SQLiteStudio/finalDB";
+    String url = "jdbc:sqlite:C:/Users/Admin/Documents/SQLiteStudio/final";
     Connection conn = null;
-
-
 }
 

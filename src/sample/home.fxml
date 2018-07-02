@@ -16,6 +16,7 @@
     <URL value="@home.fxml" />
 </stylesheets>
         <children>
+
             <TextField fx:id="nameField" layoutX="76.0" layoutY="114.0" />
             <TextField fx:id="ageField" layoutX="76.0" layoutY="78.0" />
             <Button layoutX="127.0" layoutY="162.0" mnemonicParsing="false" onAction="#addLine" text="Įrašyti" />

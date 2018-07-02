@@ -33,7 +33,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        System.out.println("BBBBBBBBBBBBBBBBBBBb");
+//        System.out.println("BBBBBBBBBBBBBBBBBBBb");
         SQLinserter in = new SQLinserter();
         List<Model> data = in.getData();
         lists.setAll(data);
@@ -47,7 +47,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void addLine() {
-        System.out.println("vvvvvvvvvvvvvvvvvvv");
+
         SQLinserter in = new SQLinserter();
         in.insert(nameField.getText(), ageField.getText());
 

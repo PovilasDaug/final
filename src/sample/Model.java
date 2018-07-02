@@ -8,6 +8,9 @@ public class Model {
 
     private String age;
 
+    public Model() {
+    }
+
     public Model(String name, String age) {
         this.name = name;
         this.age = age;

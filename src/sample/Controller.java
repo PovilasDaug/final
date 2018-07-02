@@ -1,8 +1,10 @@
 package sample;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +16,8 @@ import javafx.stage.Stage;
 
 
 public class Controller implements Initializable {
+
+    private ObservableList lists = FXCollections.observableArrayList();
 
     @FXML
     public TableView<Model> view;
@@ -29,13 +33,21 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        System.out.println("BBBBBBBBBBBBBBBBBBBb");
+        SQLinserter in = new SQLinserter();
+        List<Model> data = in.getData();
+        lists.setAll(data);
+
         nameCo.setCellValueFactory(new PropertyValueFactory<>("name"));
         ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
+        view.setItems(lists);
+
+
     }
 
     @FXML
     public void addLine() {
-
+        System.out.println("vvvvvvvvvvvvvvvvvvv");
         SQLinserter in = new SQLinserter();
         in.insert(nameField.getText(), ageField.getText());
 
@@ -43,8 +55,15 @@ public class Controller implements Initializable {
         String age = ageField.getText();
 
         Model model = new Model(name, age);
+
+      //  List<Model> data = in.getData();
+       // lists.setAll(data);
         //reikia atvaizduoti is DB
-        view.getItems().add(model);
+        //view.getItems().add(model);
+
+        List<Model> data = in.getData();
+        lists.setAll(data);
+
     }
 
 

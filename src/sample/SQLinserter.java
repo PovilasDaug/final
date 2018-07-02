@@ -3,6 +3,8 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLinserter
 {
@@ -39,6 +41,30 @@ public class SQLinserter
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public   List<Model> getData(){
+        String sql = "select name,age from final";
+        List<Model> l = new ArrayList<>();
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                Model m = new Model();
+                m.setName(rs.getString(1));
+                m.setAge(rs.getString(2));
+                l.add(m);
+            }
+            System.out.println(l.size() +" AAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.err.println(e);
+
+        }
+
+
+
+        return l;
     }
 }
 

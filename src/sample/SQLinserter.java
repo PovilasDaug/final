@@ -8,8 +8,6 @@ import java.util.List;
 
 public class SQLinserter
 {
-
-
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -44,27 +42,22 @@ public class SQLinserter
     }
     public   List<Model> getData(){
         String sql = "select name,age from final";
-        List<Model> l = new ArrayList<>();
+        List<Model> list = new ArrayList<>();
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                Model m = new Model();
-                m.setName(rs.getString(1));
-                m.setAge(rs.getString(2));
-                l.add(m);
+                Model m = new Model(rs.getString(1),rs.getString(2));
+                list.add(m);
             }
-            System.out.println(l.size() +" AAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+            System.out.println(list.size() );
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             System.err.println(e);
-
         }
 
-
-
-        return l;
+        return list;
     }
 }
 

@@ -33,7 +33,6 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        System.out.println("BBBBBBBBBBBBBBBBBBBb");
         SQLinserter in = new SQLinserter();
         List<Model> data = in.getData();
         lists.setAll(data);
@@ -41,8 +40,6 @@ public class Controller implements Initializable {
         nameCo.setCellValueFactory(new PropertyValueFactory<>("name"));
         ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
         view.setItems(lists);
-
-
     }
 
     @FXML
@@ -56,8 +53,8 @@ public class Controller implements Initializable {
 
         Model model = new Model(name, age);
 
-      //  List<Model> data = in.getData();
-       // lists.setAll(data);
+        //List<Model> data = in.getData();
+        //lists.setAll(data);
         //reikia atvaizduoti is DB
         //view.getItems().add(model);
 

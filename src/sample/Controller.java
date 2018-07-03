@@ -22,13 +22,17 @@ public class Controller implements Initializable {
     @FXML
     public TableView<Model> view;
     @FXML
+    public TableColumn<Model, String> idCo;
+    @FXML
     public TableColumn<Model, String> nameCo;
     @FXML
-    public TableColumn<Model, String> ageCo;
+    public TableColumn<Model, String> comCo;
+    @FXML
+    public TextField idField;
     @FXML
     public TextField nameField;
     @FXML
-    public TextField ageField;
+    public TextField comField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -37,8 +41,10 @@ public class Controller implements Initializable {
         List<Model> data = in.getData();
         lists.setAll(data);
 
+        idCo.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameCo.setCellValueFactory(new PropertyValueFactory<>("name"));
-        ageCo.setCellValueFactory(new PropertyValueFactory<>("age"));
+        comCo.setCellValueFactory(new PropertyValueFactory<>("comment"));
+
         view.setItems(lists);
     }
 
@@ -51,7 +57,7 @@ public class Controller implements Initializable {
 
         //i lentele idedam nauja lentele.
 
-        in.insert(nameField.getText(), ageField.getText());
+        in.insert(idField.getText(), nameField.getText(), comField.getText());
 
         List<Model> data = in.getData();
 

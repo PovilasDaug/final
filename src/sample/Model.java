@@ -4,33 +4,40 @@ package sample;
 
 public class Model {
 
+    private String id;
+
     private String name;
 
-    private String age;
+    private String comment;
 
 
-    public Model(String name, String age) {
+    public Model(String id, String name, String comment) {
+        this.id = id;
         this.name = name;
-        this.age = age;
+        this.comment = comment;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
-
         return name;
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
 
-    public String getAge() {
-
-        return age;
+    public String getComment() {
+        return comment;
     }
 
-    public void setAge(String age) {
-
-        this.age = age;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

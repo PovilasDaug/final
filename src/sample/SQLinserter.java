@@ -28,33 +28,34 @@ public class SQLinserter
     }
 
 
-    public void insert(String name, String age) {
-        String sql = "INSERT INTO final(name,age) VALUES(?,?)";
+    public void insert(String id, String name, String comment) {
+        String sql = "INSERT INTO final(id,name,comment) VALUES(?,?,?)";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, name);
-            pstmt.setString(2, age);
+            pstmt.setString(1, id);
+            pstmt.setString(2, name);
+            pstmt.setString(3, comment);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage() + "asdasdas");
         }
     }
     public List<Model> getData(){
-        String sql = "select name, age from final";
+        String sql = "select id, name, comment from final";
         List<Model> list = new ArrayList<>();
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                Model newEntry = new Model(rs.getString(1),rs.getString(2));
+                Model newEntry = new Model(rs.getString(1),rs.getString(2),rs.getString(3));
                 list.add(newEntry);
             }
-            System.out.println(list.size() );
+            System.out.println("Įrašų skaičius DB: "  + list.size() );
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage() +"asdasdasd");
-            System.err.println(e + "asdasdasd");
+            System.out.println(e.getMessage() +"SQL klauida");
+            System.err.println(e + "SQL Klaida2");
         }
 
         return list;

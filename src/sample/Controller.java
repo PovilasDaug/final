@@ -45,20 +45,16 @@ public class Controller implements Initializable {
     @FXML
     public void addLine() {
 
+        //sukuriam SQL inserteri
+
         SQLinserter in = new SQLinserter();
+
+        //i lentele idedam nauja lentele.
+
         in.insert(nameField.getText(), ageField.getText());
 
-        String name = nameField.getText();
-        String age = ageField.getText();
-
-        Model model = new Model(name, age);
-
-        //List<Model> data = in.getData();
-        //lists.setAll(data);
-        //reikia atvaizduoti is DB
-        //view.getItems().add(model);
-
         List<Model> data = in.getData();
+
         lists.setAll(data);
 
     }

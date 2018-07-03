@@ -20,7 +20,7 @@ public class SQLinserter
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + "dsasadsa");
             e.printStackTrace();
             System.exit(123);
         }
@@ -37,24 +37,24 @@ public class SQLinserter
             pstmt.setString(2, age);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + "asdasdas");
         }
     }
-    public   List<Model> getData(){
-        String sql = "select name,age from final";
+    public List<Model> getData(){
+        String sql = "select name, age from final";
         List<Model> list = new ArrayList<>();
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                Model m = new Model(rs.getString(1),rs.getString(2));
-                list.add(m);
+                Model newEntry = new Model(rs.getString(1),rs.getString(2));
+                list.add(newEntry);
             }
             System.out.println(list.size() );
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            System.err.println(e);
+            System.out.println(e.getMessage() +"asdasdasd");
+            System.err.println(e + "asdasdasd");
         }
 
         return list;
